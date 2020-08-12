@@ -1,0 +1,19 @@
+{
+  "name": "frontendproject",
+  "version": "1.0.0",
+  "description": "Cliente del proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Camilo018/FrontEndProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Camilo018/FrontEndProject/issues"
+  },
+  "homepage": "https://github.com/Camilo018/FrontEndProject#readme"
+}
