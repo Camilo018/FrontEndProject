@@ -1,11 +1,11 @@
 class Services {
 
     constructor() {
-        this.URL = 'http://localhost:9100/'
+        this.URL = 'http://localhost:9000/'
     }
 
     async addUser(user) {
-        const response = await fetch(this.URL+'test',{
+        const response = await fetch(this.URL+'addCovid',{
             method: 'POST',
             body: user
         });

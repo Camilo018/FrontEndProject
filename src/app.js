@@ -7,14 +7,21 @@ const services = new Services();
 document.getElementById('btn-sentence').addEventListener('click', async (event) => {
     event.preventDefault();
     const user = await document.getElementById('user').value;
+    const city = await document.getElementById('city').value;
+    const image = await document.getElementById('image').files;
+    
     const formData = new FormData();
-    formData.append('user', user);
-    console.log(formData.values);
+    formData.append("name", user);
+    formData.append("city", city);
+    formData.append('image',image[0]);
 
-    //    const sentence = await services.addUser(formData);
-    const response = await fetch('http://localhost:9100/test', {
+    for (var value of formData.values()) {
+        console.log(value); 
+     }
+
+    const response = await fetch('http://localhost:4000/addCovid', {
         method: 'POST',
-        body: user
+        body: formData
     });
 
     const data = await response.json();
