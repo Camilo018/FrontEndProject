@@ -14,7 +14,7 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
     //    const sentence = await services.addUser(formData);
     const response = await fetch('http://localhost:9100/test', {
         method: 'POST',
-        body: formData
+        body: user
     });
 
     const data = await response.json();

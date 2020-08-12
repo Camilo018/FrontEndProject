@@ -1,19 +1,32 @@
 {
-  "name": "frontendproject",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "Cliente del proyecto",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack-dev-server",
+    "bundle": "npx webpack -d"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Camilo018/FrontEndProject.git"
+    "url": "git+https://github.com/jehernandezv/MicroservicesPractice1.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jhonn Hernandez, Cristian Lopez",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Camilo018/FrontEndProject/issues"
+    "url": "https://github.com/jehernandezv/MicroservicesPractice1/issues"
   },
-  "homepage": "https://github.com/Camilo018/FrontEndProject#readme"
+  "homepage": "https://github.com/jehernandezv/MicroservicesPractice1#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
