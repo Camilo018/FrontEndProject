@@ -19,7 +19,7 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
         console.log(value); 
      }
 
-    const response = await fetch('http://localhost:4000/addCovid', {
+    const response = await fetch('http://localhost:3100/addCovid', {
         method: 'POST',
         body: formData
     });
