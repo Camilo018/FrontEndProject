@@ -29,7 +29,15 @@ document.getElementById('btn-pdf').addEventListener('click', async (event) => {
     const cityPDF = await document.getElementById('cityPDF').value;
     
     const response = await fetch('http://localhost:3100/generatePDF/'+cityPDF);
-    const pdf = await response.json();
-    console.log(pdf);
+    const pdf = await response.arrayBuffer();
+    const link = await document.createElement( 'a' );
+    link.style.display = 'none';
+    document.body.appendChild( link );
+    const blob = new Blob( [ pdf ], { type: 'application/pdf' } );	
+    const objectURL = URL.createObjectURL( blob );
+    link.href = objectURL;
+    link.href = URL.createObjectURL( blob );
+    link.download =  'Test.pdf';
+    link.click();
 
 });
