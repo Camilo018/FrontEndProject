@@ -16,7 +16,7 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
     formData.append("city", city);
     formData.append('image',image[0]);
 
-    const response = await fetch('http://localhost:3100/addCovid', {
+    const response = await fetch('http://localhost:4500/addCovid', {
         method: 'POST',
         body: formData
     });
@@ -30,7 +30,6 @@ document.getElementById('btn-pdf').addEventListener('click', async (event) => {
     const cityPDF = await document.getElementById('cityPDF').value; 
     const response = await fetch('http://localhost:3100/generatePDF/' + cityPDF);
     await snooze(150);
-
     const pdf = await response.arrayBuffer();
    
     const link = document.createElement( 'a' );
