@@ -15,10 +15,6 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
     formData.append("city", city);
     formData.append('image',image[0]);
 
-    for (var value of formData.values()) {
-        console.log(value); 
-     }
-
     const response = await fetch('http://localhost:3100/addCovid', {
         method: 'POST',
         body: formData
@@ -28,3 +24,12 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
     console.log(data);
 });
 
+document.getElementById('btn-pdf').addEventListener('click', async (event) => {
+    event.preventDefault();
+    const cityPDF = await document.getElementById('cityPDF').value;
+    
+    const response = await fetch('http://localhost:3100/generatePDF/'+cityPDF);
+    const pdf = await response.json();
+    console.log(pdf);
+
+});
