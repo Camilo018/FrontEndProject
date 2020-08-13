@@ -3,6 +3,7 @@ import UI from './UI';
 const ui = new UI();
 import Services from './Services';
 const services = new Services();
+const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 document.getElementById('btn-sentence').addEventListener('click', async (event) => {
     event.preventDefault();
@@ -26,11 +27,13 @@ document.getElementById('btn-sentence').addEventListener('click', async (event) 
 
 document.getElementById('btn-pdf').addEventListener('click', async (event) => {
     event.preventDefault();
-    const cityPDF = await document.getElementById('cityPDF').value;
-    
-    const response = await fetch('http://localhost:3100/generatePDF/'+cityPDF);
+    const cityPDF = await document.getElementById('cityPDF').value; 
+    const response = await fetch('http://localhost:3100/generatePDF/' + cityPDF);
+    await snooze(150);
+
     const pdf = await response.arrayBuffer();
-    const link = await document.createElement( 'a' );
+   
+    const link = document.createElement( 'a' );
     link.style.display = 'none';
     document.body.appendChild( link );
     const blob = new Blob( [ pdf ], { type: 'application/pdf' } );	
